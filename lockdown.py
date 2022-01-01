@@ -45,7 +45,7 @@ class LockDown(object):
         mask = (who_data_by_country['date'] >= before_lockdown_start_date) & (
                     who_data_by_country['date'] <= self.lockdown_start_date)
         edited_by_date_for_before_lockdown = who_data_by_country.loc[mask]
-        print(edited_by_date_for_before_lockdown['New_cases'], before_lockdown_start_date, self.lockdown_start_date)
+        #print(edited_by_date_for_before_lockdown['New_cases'])#pycharm yeniden başlatmam la
         return edited_by_date_for_before_lockdown['New_cases'].mean()
 
     def get_after_lockdown_average_case_count_by_week(self, who_data, week):
