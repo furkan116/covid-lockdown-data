@@ -25,8 +25,6 @@ class LockDown(object):
         who_data_edited_by_date = who_data_by_country.loc[mask2]
         columns_will_be_added_list = [Series(who_data_edited_by_date[x].to_numpy(), name=x) for x in columns_will_be_added]
         edited_by_date.reset_index(inplace=True, drop=True)
-        print(mask, mask2)
-        print(edited_by_date)
         self.dataframe = concat([edited_by_date, *columns_will_be_added_list], axis=1)
 
     def set_lockdown_success_point(self, point):
