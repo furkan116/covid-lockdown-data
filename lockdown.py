@@ -5,6 +5,7 @@ from pandas import Series, concat
 class LockDown(object):
     def __init__(self, country_code, lockdown_start_date, lockdown_end_date):
         self.country_code = country_code
+        self.lockdown_name = ""
         self.split1 = lockdown_start_date.split('.')
         self.lockdown_start_date = "{}-{}-{}".format(self.split1[2], self.split1[1], self.split1[0])
         self.lockdown_start_date_datetime_object = datetime.datetime.strptime(self.lockdown_start_date, '%Y-%m-%d')
